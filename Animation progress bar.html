@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      * {
+        box-sizing: border-box;
+      }
+
+    .container{
+      background-color: gray;
+      width: 500px;
+      padding: 20px;
+    }
+
+    .container li{
+      list-style-type: none;
+      margin: 40px 0;
+      font-weight: bolder;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .container li::before{
+      content: '';
+      position: absolute;
+
+      top: calc(100% + 5px);
+      left:0px;
+
+      background-color: azure;
+      width: 100%;
+      height: 20px;
+      border-radius: 100px;
+    }
+
+    .container li::after{
+      content: '';
+      position: absolute;
+
+      top: calc(100% + 5px);
+      left:0px;
+
+      background-color: rgb(9, 97, 97);
+      width: 0;
+      height: 20px;
+      border-radius: 100px;
+
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-delay: 2s;      
+      animation-iteration-count: infinite;
+      animation-direction: forward;
+      
+      /* animation-fill-mode: forwards; */
+    }
+
+    .container li.html::after{
+          animation-name: html;
+
+    }
+
+    @keyframes html{
+      
+     to{
+      width: 90%;
+      background-color: orangered;
+     }
+      
+    }
+
+    .container li.Css::after{
+          animation-name: Css;
+
+    }
+
+    @keyframes Css{
+      
+     to{
+      width: 90%;
+
+     }
+      
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li class="html">html</li>
+        <li class="Css">Css</li>
+        <li class="Css">Js</li>
+        <li class="Css">java</li>
+        <li class="Css">boot</li>
+      </ul>
+    </div>
+    
+  </body>
+</html>
